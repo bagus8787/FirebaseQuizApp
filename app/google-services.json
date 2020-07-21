@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "466557298737",
+    "firebase_url": "https://fir-quiz-android-app-mast.firebaseio.com",
+    "project_id": "fir-quiz-android-app-mast",
+    "storage_bucket": "fir-quiz-android-app-mast.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466557298737:android:308c3e49d410b5253b4d10",
+        "android_client_info": {
+          "package_name": "com.naman.firebasequizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466557298737-g4r0374r0j6otrtf6evir4dn5lo2m7n3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.naman.firebasequizapp",
+            "certificate_hash": "ea7881aee1a95fc4bcae823f17b2b0a6bf8caefe"
+          }
+        },
+        {
+          "client_id": "466557298737-hfm36r245ng4p6aqkljcobub2cs9dgej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1H6i_FLlFXukZPmsfJlhq4epsW3QqOvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466557298737-hfm36r245ng4p6aqkljcobub2cs9dgej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.naman.firebasequizapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_psikotes"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_psikotes_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+<!--        <activity android:name=".admin.MainKategoriActivity"></activity>-->
+        <activity android:name=".MainActivity"></activity>
+<!--        <activity android:name=".admin.CreateKategoriActivity" />-->
+        <activity android:name=".admin.RegisterActivity" />
+        <activity
+            android:name=".admin.LoginActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".admin.UpdateActivity"
+            android:parentActivityName=".admin.MainSoalActivity" />
+        <activity
+            android:name=".admin.CreateActivity"
+            android:parentActivityName=".admin.MainSoalActivity" />
+        <activity
+            android:name=".admin.MainSoalActivity"
+            android:parentActivityName=".HomeActivity" />
+        <!-- <activity android:name=".MainActivity"></activity> -->
+        <!-- <meta-data -->
+        <!-- android:name="com.facebook.sdk.ApplicationId" -->
+        <!-- android:value="@string/facebook_app_id" /> -->
+        <!-- <meta-data -->
+        <!-- android:name="preloaded_fonts" -->
+        <!-- android:resource="@array/preloaded_fonts" /> -->
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ResultActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".QuizActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+<!--        android:name=".MainActivity"-->
+        <activity
+            android:name=".admin.MainKategoriActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
