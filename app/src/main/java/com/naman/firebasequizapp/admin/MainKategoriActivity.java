@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -80,6 +81,7 @@ public class MainKategoriActivity extends AppCompatActivity implements View.OnCl
                 soalList.clear();
 
                 for (DataSnapshot mahasiswaSnapshot : dataSnapshot.getChildren()) {
+//                    Log.d("mahasiswaSnapshot", mahasiswaSnapshot.toString());
                     CategoryModel questionsModel = mahasiswaSnapshot.getValue(CategoryModel.class);
                     soalList.add(questionsModel);
                 }
@@ -100,7 +102,7 @@ public class MainKategoriActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainKategoriActivity.this, QuizActivity.class);
-//                intent.putExtra(QuizActivity.EXTRA_CATEGORY, soalList.get(i));
+                intent.putExtra(QuizActivity.EXTRA_CATEGORY, soalList.get(i));
 //                intent.putExtra("id_kategori",id_kategori);
 
                 startActivity(intent);
