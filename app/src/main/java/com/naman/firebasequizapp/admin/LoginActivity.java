@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Bundle bundle = new Bundle();
                                     bundle.putString("email", emailUser);
                                     bundle.putString("pass", passwordUser);
-                                    startActivity(new Intent(LoginActivity.this, MainSoalActivity.class)
+                                    startActivity(new Intent(LoginActivity.this, ListKategoriActivity.class)
                                             .putExtra("emailpass", bundle));
                                     finish();
                                 }

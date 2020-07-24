@@ -9,7 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.naman.firebasequizapp.admin.ListKategoriActivity;
 import com.naman.firebasequizapp.admin.LoginActivity;
+import com.naman.firebasequizapp.admin.MainKategoriActivity;
 import com.naman.firebasequizapp.admin.MainSoalActivity;
 import com.naman.firebasequizapp.admin.UpdateActivity;
 
@@ -28,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),QuizActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainKategoriActivity.class));
             }
         });
 

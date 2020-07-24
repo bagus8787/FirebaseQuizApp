@@ -15,9 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-<!--        <activity android:name=".admin.MainKategoriActivity"></activity>-->
-        <activity android:name=".MainActivity"></activity>
-<!--        <activity android:name=".admin.CreateKategoriActivity" />-->
+        <activity android:name=".admin.UpdateNilaiActivity"></activity>
+        <activity android:name=".admin.NilaiActivity" />
+        <activity android:name=".admin.UpdateKategoriActivity" />
+        <activity android:name=".admin.ListKategoriActivity" />
+        <activity android:name=".admin.MainKategoriActivity" /> <!-- <activity android:name=".MainActivity" /> -->
+        <activity android:name=".admin.CreateKategoriActivity" />
         <activity android:name=".admin.RegisterActivity" />
         <activity
             android:name=".admin.LoginActivity"
@@ -30,8 +33,7 @@
             android:parentActivityName=".admin.MainSoalActivity" />
         <activity
             android:name=".admin.MainSoalActivity"
-            android:parentActivityName=".HomeActivity" />
-        <!-- <activity android:name=".MainActivity"></activity> -->
+            android:parentActivityName=".admin.ListKategoriActivity" /> <!-- <activity android:name=".MainActivity"></activity> -->
         <!-- <meta-data -->
         <!-- android:name="com.facebook.sdk.ApplicationId" -->
         <!-- android:value="@string/facebook_app_id" /> -->
@@ -49,10 +51,9 @@
         <activity
             android:name=".QuizActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-<!--        android:name=".MainActivity"-->
+            tools:ignore="LockedOrientationActivity" /> <!-- android:name=".MainActivity" -->
         <activity
-            android:name=".admin.MainKategoriActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             tools:ignore="LockedOrientationActivity">

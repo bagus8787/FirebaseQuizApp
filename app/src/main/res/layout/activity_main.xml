@@ -16,7 +16,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="-30dp"
         android:layout_marginBottom="432dp"
-        android:src="@drawable/quiz" />
+        android:src="@drawable/psikotes_ss" />
 
     <ImageView
         android:id="@+id/imageView"

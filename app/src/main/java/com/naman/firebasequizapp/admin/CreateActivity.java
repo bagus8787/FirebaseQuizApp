@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -21,8 +22,15 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
 
     private EditText edtOpt1, edtOpt2, edtOpt3, edtOpt4, edtAns, edtQues;
     private Button btnSave;
+    private TextView edtIdkat;
+
+    public static final String EXTRA_CATEGORY = "extra_category";
 
     private QuestionsModel questionsModel;
+
+    private CategoryModel categoryModel;
+
+    public String kategori_id, kategori_nama;
 
     DatabaseReference mDatabase;
 
@@ -46,6 +54,13 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
 
         btnSave.setOnClickListener(this);
 
+        kategori_id = getIntent().getStringExtra("id_kategori");
+        kategori_nama = getIntent().getStringExtra("nama_kategori");
+
+        edtIdkat = findViewById(R.id.txt_id_kateg);
+
+        edtIdkat.setText("Tambah soal Kategori "+ kategori_nama);
+
         questionsModel = new QuestionsModel();
 
         if (getSupportActionBar() != null) {
@@ -60,7 +75,8 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         if (view.getId() == R.id.btn_save) {
             saveMahasiswa();
 
-            Intent intent = new Intent(CreateActivity.this, HomeActivity.class);
+            Intent intent = new Intent(CreateActivity.this, MainSoalActivity.class);
+            intent.putExtra("id_kategori", kategori_id);
             startActivity(intent);
         }
 
@@ -68,6 +84,16 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
 
     private void saveMahasiswa()
     {
+//        categoryModel = getIntent().getParcelableExtra(EXTRA_CATEGORY);
+//
+//        if (categoryModel != null) {
+//            kategori_id = categoryModel.getId_kategori();
+//        } else {
+//            categoryModel = new CategoryModel();
+//        }
+
+        kategori_id = getIntent().getStringExtra("id_kategori");
+
         String option1 = edtOpt1.getText().toString().trim();
         String option2 = edtOpt2.getText().toString().trim();
         String option3 = edtOpt3.getText().toString().trim();
@@ -75,7 +101,6 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
 
         String answer = edtAns.getText().toString().trim();
         String question = edtQues.getText().toString().trim();
-
 
         boolean isEmptyFields = false;
 
@@ -114,7 +139,7 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
 
             Toast.makeText(CreateActivity.this, "Saving Data...", Toast.LENGTH_SHORT).show();
 
-            DatabaseReference dbMahasiswa = mDatabase.child("Questions").child("Coba");
+            DatabaseReference dbMahasiswa = mDatabase.child("Questions").child(kategori_id+"/"+"soal");
 
             String id = dbMahasiswa.push().getKey();
             questionsModel.setId(id);

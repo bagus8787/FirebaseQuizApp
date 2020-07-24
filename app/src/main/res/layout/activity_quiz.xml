@@ -108,15 +108,16 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="30dp"
                 android:orientation="vertical">
+
                 <TextView
+                    android:id="@+id/question"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Enable internet to get question here!"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
+                    android:text="Belum ada daftar soal."
                     android:textColor="@color/black"
-                    android:id="@+id/question"/>
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -154,7 +155,7 @@
                                 android:id="@+id/option1"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Option one"
+                                android:text="-"
                                 android:textColor="@color/black"
                                 android:textSize="26sp" />
                         </LinearLayout>
@@ -186,7 +187,7 @@
                                 android:id="@+id/option2"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Option Two"
+                                android:text="-"
                                 android:textColor="@color/black"
                                 android:textSize="26sp" />
                         </LinearLayout>
@@ -218,7 +219,7 @@
                                 android:id="@+id/option3"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Option Three"
+                                android:text="-"
                                 android:textColor="@color/black"
                                 android:textSize="26sp" />
                         </LinearLayout>
@@ -250,7 +251,7 @@
                                 android:id="@+id/option4"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Option Four"
+                                android:text="-"
                                 android:textColor="@color/black"
                                 android:textSize="26sp" />
                         </LinearLayout>
@@ -264,13 +265,6 @@
                         android:layout_margin="10dp"
                         app:cardCornerRadius="5dp"
                         app:cardElevation="5dp">
-
-                        <TextView
-                            android:id="@+id/txt_id_kategori"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            android:textSize="24sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -288,7 +282,132 @@
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
+                
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible">
+
+                <LinearLayout
+                    android:id="@+id/lineSkor"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"/>
+
+                <LinearLayout
+                    android:id="@+id/lineSoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lineSkor"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvSoal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:background="#05FFFFFF"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="bababba"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linePilihanJawaban"
+                    android:layout_width="391dp"
+                    android:layout_height="142dp"
+                    android:layout_below="@id/lineSoal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <RadioGroup
+                        android:id="@+id/rgPilihanJawaban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rbPilihanJawaban1"
+                            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp"
+                            android:layout_marginBottom="5dp"
+                            android:checked="true"
+                            android:text="A."
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbPilihanJawaban2"
+                            style="@android:style/Widget.CompoundButton.RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:autoText="true"
+                            android:checked="true"
+                            android:text="B."
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/rbPilihanJawaban3"
+                            style="@android:style/Widget.CompoundButton.RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:checked="true"
+                            android:text="C."
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbPilihanJawaban4"
+                            style="@android:style/Widget.CompoundButton.RadioButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:checked="true"
+                            android:text="C."
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linePilihanJawaban"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#ff0004"
+                    android:text="Next" />
+                </RelativeLayout>
+
             </LinearLayout>
+
         </ScrollView>
         <RelativeLayout
             android:layout_width="match_parent"

@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -25,12 +26,18 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
     private EditText edtOption1, edtOption2, edtOption3, edtOption4, edtQuestion, edtAnswer;
     private Button btnUpdate;
 
+    private TextView edtIdKat;
+
     public static final String EXTRA_MAHASISWA = "extra_mahasiswa";
+    public static final String EXTRA_CATEGORY = "extra_category";
     public final int ALERT_DIALOG_CLOSE = 10;
     public final int ALERT_DIALOG_DELETE = 20;
 
+    private CategoryModel categoryModel;
+
     private QuestionsModel questionsModel;
     private String soalId;
+    private String kategoriId, kategoriNama;
 
     DatabaseReference mDatabase;
 
@@ -49,9 +56,21 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         edtOption3 = findViewById(R.id.edt_edit_option3);
         edtOption4 = findViewById(R.id.edt_edit_option4);
 
-
         btnUpdate = findViewById(R.id.btn_update);
         btnUpdate.setOnClickListener(this);
+
+//        categoryModel = getIntent().getParcelableExtra(EXTRA_CATEGORY);
+//
+//        if (categoryModel != null) {
+//            kategoriId = categoryModel.getId_kategori();
+//        } else {
+//            categoryModel = new CategoryModel();
+//        }
+        kategoriId = getIntent().getStringExtra("id_kategori");
+        kategoriNama = getIntent().getStringExtra("nama_kategori");
+
+        edtIdKat    = findViewById(R.id.txt_id_kateg);
+        edtIdKat.setText("Edit soal Kategori "+ kategoriNama);
 
         questionsModel = getIntent().getParcelableExtra(EXTRA_MAHASISWA);
 
@@ -145,7 +164,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
             DatabaseReference dbMahasiswa = mDatabase.child("Questions");
 
             //update data
-            dbMahasiswa.child(soalId).setValue(questionsModel);
+            dbMahasiswa.child(kategoriId+"/"+"soal").child(soalId).setValue(questionsModel);
 
             finish();
 
@@ -206,7 +225,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
                         } else {
                             //hapus data
                             DatabaseReference dbMahasiswa =
-                                    mDatabase.child("Questions").child(soalId);
+                                    mDatabase.child("Questions").child(kategoriId+"/"+"soal").child(soalId);
 
                             dbMahasiswa.removeValue();
 

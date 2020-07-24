@@ -165,43 +165,27 @@ public class QuizActivity extends AppCompatActivity {
 
         getquestions();
 
-//        id_kategori = getIntent().getStringExtra("id_kategori");
-//        id_kat.setText(id_kategori);
-
-        categoryModel = getIntent().getParcelableExtra(EXTRA_CATEGORY);
-
-        if (categoryModel != null) {
-            id_kategori = categoryModel.getId_kategori();
-//            id_kategori = id_kategori.replace("'\'","");
-        } else {
-            categoryModel = new CategoryModel();
-        }
-
-        id_kat.setText(id_kategori);
-
+        id_kat.setText(categoryModel.getId_kategori());
 
     }
 
     private void getquestions() {
 
-        categoryModel = getIntent().getParcelableExtra(EXTRA_CATEGORY);
+//        categoryModel = getIntent().getParcelableExtra("id_kategori",id_kategori);
 
-        if (categoryModel != null) {
-            id_kategori = categoryModel.getId_kategori();
-//            id_kategori = id_kategori.replace("'\'","");
-        } else {
-            categoryModel = new CategoryModel();
-        }
-        root.child(id_kategori+"/"+"soal").addChildEventListener(new ChildEventListener() {
+//        id_kategori = getIntent().getStringExtra("id_kategori");
+//
+//        if (categoryModel != null) {
+//            id_kategori = getIntent().getStringExtra("id_kategori");
+////            id_kategori = id_kategori.replace("'\'","");
+//        } else {
+//            categoryModel = new CategoryModel();
+//        }
+
+        root.child("1K").child("soal").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//                Log.d(TAG, dataSnapshot.getValue().toString());
-//                for(DataSnapshot dsChild : dataSnapshot.getChildren()){
-//                    Log.d(TAG, dsChild.getValue().toString());
-//                }
-
                 QuestionsModel qsnapshot = dataSnapshot.getValue(QuestionsModel.class);
-////
                 assert qsnapshot != null;
                 questionArrayList.add(new QuestionsModel(qsnapshot.getQuestion(),qsnapshot.getOption1(),qsnapshot.getOption2(),qsnapshot.getOption3(),qsnapshot.getOption4(),qsnapshot.getAnswer(),qsnapshot.getid()));
                 keys.add(dataSnapshot.getKey());

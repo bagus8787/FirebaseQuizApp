@@ -53,7 +53,7 @@ public class CreateKategoriActivity extends AppCompatActivity implements View.On
         if (view.getId() == R.id.btn_save_kategori) {
             saveMahasiswa();
 
-            Intent intent = new Intent(CreateKategoriActivity.this, MainKategoriActivity.class);
+            Intent intent = new Intent(CreateKategoriActivity.this, ListKategoriActivity.class);
             startActivity(intent);
         }
 

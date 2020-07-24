@@ -14,7 +14,7 @@
         android:layout_below="@+id/imageView3"
         android:layout_marginTop="50dp"
         android:background="@drawable/button"
-        android:text="START QUIZ"
+        android:text="Mulai Psikotes"
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
 
@@ -42,6 +42,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView2"
         android:layout_marginTop="-30dp"
-        app:srcCompat="@drawable/quiz" />
+        app:srcCompat="@drawable/psikotes_ss" />
 
 </RelativeLayout>

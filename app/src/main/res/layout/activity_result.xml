@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="Hasil Kuis"
+        android:text="Hasil Psikotes"
         android:textColor="@color/black"
         android:textSize="50sp"
         android:textStyle="bold" />
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Total Kuis yang dijawab"
+                android:text="Total Psikotes yang dijawab"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

@@ -9,9 +9,10 @@
     tools:context=".admin.MainSoalActivity">
 
     <TextView
+        android:id="@+id/txt_id_kateg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Soal"
+        android:text="idkat"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -20,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Pertanyaan" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
